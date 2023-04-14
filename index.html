@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Form</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <form class="insurance-record-form">
+        <div class="control-elem control-elem--column-direction">
+            <div class="control-elem__header">Форма запроса</div>
+            <div class="control-elem__body"></div>
+        </div>
+        <div class="control-elem control-elem--row-direction">
+            <label class="control-elem__label" for="surname">Фамилия</label>
+            <input class="control-elem__input" type="text" name="surname" required minlength="1" maxlength="40">
+        </div>
+        <div class="control-elem control-elem--row-direction">
+            <label class="control-elem__label" for="firstname">Имя</label>
+            <input class="control-elem__input" type="text" name="firstname" required minlength="1" maxlength="40">
+        </div>
+        <div class="control-elem control-elem--row-direction">
+            <label class="control-elem__label" for="patronymic">Отчество</label>
+            <input class="control-elem__input" type="text" name="patronymic" maxlength="40">
+        </div>
+        <div class="control-elem control-elem--row-direction">
+            <label class="control-elem__label" for="SNILS">СНИЛС</label>
+            <input class="control-elem__input" type="text" name="SNILS" required pattern="\d{3}-\d{3}-\d{3} \d{2}">
+        </div>
+        <div class="control-elem control-elem--row-direction">
+            <label class="control-elem__label" for="birthday">Дата рождения</label>
+            <input class="control-elem__input" type="text" name="birthday" required pattern="\d{2}.\d{2}.\d{4}">
+        </div>
+        <div class="control-elem control-elem--row-direction">
+            <label class="control-elem__label" for="data-availability">Наличие данных</label>
+            <select class="control-elem__input" name="data-availability" class="data-availability">
+                <option value="no">НЕТ</option>
+                <option value="yes">ДА</option>
+            </select>
+        </div>
+        <div class="control-elem control-elem--column-direction">
+            <div class="control-elem__header">Общая продолжительность страхового стажа на дату обращения гражданина
+            </div>
+            <div class="control-elem__body"></div>
+        </div>
+        <div class="control-elem control-elem--row-direction">
+            <label class="control-elem__label" for="experience-length-years">Общая продолжительность страхового стажа
+                лет</label>
+            <input class="control-elem__input" type="number" name="experience-length-years" required min="0" max="999">
+        </div>
+        <div class="control-elem control-elem--row-direction">
+            <label class="control-elem__label" for="experience-length-months">Общая продолжительность страхового стажа
+                месяцев</label>
+            <input class="control-elem__input" type="number" name="experience-length-months" required min="0" max="99">
+        </div>
+        <div class="control-elem control-elem--row-direction">
+            <label class="control-elem__label" for="experience-length-days">Общая продолжительность страхового стажа
+                дней</label>
+            <input class="control-elem__input" type="number" name="experience-length-days" required min="0" max="99">
+        </div>
+        <div class="submit-holder">
+            <input type="submit" value="Сохранить" class="submit-button">
+        </div>
+    </form>
+    <div class="total-request" style="margin-top: 1%;">
+        <div class="control-elem control-elem--column-direction">
+            <div class="control-elem__header">Итоговый запрос</div>
+            <div class="control-elem__body">
+                <div class="control-elem--row-direction control-elem--shadow">
+                    <label class="control-elem__label" for="total">Запрос</label>
+                    <textarea class="control-elem__input" id="total"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/xml-beautify@1.2.1/dist/XmlBeautify.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
